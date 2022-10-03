@@ -16,8 +16,6 @@ public class LinkedList {
     public static void main(String[] args){
 
         Node linkedList = new Node(11);
-//        System.out.println(linkedList.link);
-//        System.out.println(linkedList.data);
         add(linkedList,new Node(12));
         add(linkedList,new Node(13));
         add(linkedList,new Node(15));
