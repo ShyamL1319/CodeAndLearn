@@ -1,14 +1,29 @@
+import java.awt.geom.Area;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 //        FastPower fp = new FastPower();
 //        System.out.println(fp.fastPower(3,20,11));
-          JosephProblem jp = new JosephProblem();
-        System.out.println();
-        jp.getTotalKilled(100);
-        System.out.println(jp.totalKilled);
-          int winningPostion = jp.getWinningPosition(100);
+//          JosephProblem jp = new JosephProblem();
+//        System.out.println();
+//        jp.getTotalKilled(100);
+//        System.out.println(jp.totalKilled);
+//          int winningPostion = jp.getWinningPosition(100);
+//
+//        System.out.println(winningPostion); 23,36,58,59
 
-        System.out.println(winningPostion);
+       MobilesQuery mq = new MobilesQuery();
+//10, 14, 46, 49, 58, 62, 94
+       //ArrayList<Integer> res =  mq.solve(new ArrayList<>(Arrays.asList(23,36,58,59)),new ArrayList<>(Arrays.asList(3, 207, 62, 654, 939, 680, 760)));
+
+       ArrayList<Integer> res =  mq.solve(new ArrayList<>(Arrays.asList(10, 14, 46, 49, 58, 62, 94)),new ArrayList<>(Arrays.asList(620, 204, 342, 115)));
+        System.out.println(res);
+       //        AreaUnderHills auh = new AreaUnderHills();
+//        String area =  auh.solve(new ArrayList<>(Arrays.asList(2, 1, 3 )));
+//        System.out.println(area);
+        //System.out.println(res.toString());
     }
 }
 
