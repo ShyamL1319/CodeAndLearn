@@ -18,12 +18,18 @@ public class Main {
 //10, 14, 46, 49, 58, 62, 94
        //ArrayList<Integer> res =  mq.solve(new ArrayList<>(Arrays.asList(23,36,58,59)),new ArrayList<>(Arrays.asList(3, 207, 62, 654, 939, 680, 760)));
 
-       ArrayList<Integer> res =  mq.solve(new ArrayList<>(Arrays.asList(10, 14, 46, 49, 58, 62, 94)),new ArrayList<>(Arrays.asList(620, 204, 342, 115)));
-        System.out.println(res);
+//       ArrayList<Integer> res =  mq.solve(new ArrayList<>(Arrays.asList(10, 14, 46, 49, 58, 62, 94)),new ArrayList<>(Arrays.asList(620, 204, 342, 115)));
+//        System.out.println(res);
        //        AreaUnderHills auh = new AreaUnderHills();
 //        String area =  auh.solve(new ArrayList<>(Arrays.asList(2, 1, 3 )));
 //        System.out.println(area);
         //System.out.println(res.toString());
+        InsertionSort is = new InsertionSort();
+        int arr[] = {1,2,9,10};
+        arr = is.solve(arr);
+        for( int i =0; i< arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
     }
 }
 
