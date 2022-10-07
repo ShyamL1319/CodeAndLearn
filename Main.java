@@ -25,10 +25,12 @@ public class Main {
 //        System.out.println(area);
         //System.out.println(res.toString());
         InsertionSort is = new InsertionSort();
-        int arr[] = {1,2,9,10};
-        arr = is.solve(arr);
-        for( int i =0; i< arr.length; i++){
-            System.out.print(arr[i] + " ");
+        int arr[] = {12, 11, 13, 5, 6};//{1,2,9,10};
+//        arr = is.solve(arr);
+        MergeSort ms = new MergeSort();
+       int narr[] = ms.sort(arr);
+        for( int i =0; i< narr.length; i++){
+            System.out.print(narr[i] + " ");
         }
     }
 }
