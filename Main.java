@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-//        FastPower fp = new FastPower();
-//        System.out.println(fp.fastPower(3,20,11));
+        FastPower fp = new FastPower();
+       // System.out.println(fp.fastPower(-3,3,5));
 //          JosephProblem jp = new JosephProblem();
 //        System.out.println();
 //        jp.getTotalKilled(100);
@@ -25,12 +25,61 @@ public class Main {
 //        System.out.println(area);
         //System.out.println(res.toString());
         InsertionSort is = new InsertionSort();
-        int arr[] = {12, 11, 13, 5, 6};//{1,2,9,10};
+        //int arr[] = {12, 11, 13, 5, 6};//{1,2,9,10};
 //        arr = is.solve(arr);
-        MergeSort ms = new MergeSort();
-       int narr[] = ms.sort(arr);
-        for( int i =0; i< narr.length; i++){
-            System.out.print(narr[i] + " ");
+//        MergeSort ms = new MergeSort();
+//       int narr[] = ms.sort(arr);
+//        for( int i =0; i< narr.length; i++){
+//            System.out.print(narr[i] + " ");
+//        }
+
+//        System.out.println((-1%5)+5);
+//        System.out.println(1&2);
+//        System.out.println(1&1);
+//
+//        System.out.println(4&1);
+
+
+//        QuickSort qs = new QuickSort();
+//        qs.sort(arr);
+
+        SelectionSort ss = new SelectionSort();
+//        ss.sort(arr);
+
+//        BubbleSort bs = new BubbleSort();
+//        //int arr[] = {14, 33, 27, 35, 10};
+//        int arr[] = {1,2,3,4,5,6};
+//        bs.sort(arr);
+//
+//        for( int i =0; i< arr.length; i++){
+//            System.out.print(arr[i] + " ");
+//        }
+        int arr1[] = {1,2,3,4};
+        int arr2[] = {5,6,7,8};
+        int arr3[] = {9,10,11,12};
+
+        ArrayList<ArrayList<Integer>> A = new ArrayList<ArrayList<Integer>>();
+        A.add(new ArrayList<>(Arrays.asList(1,2,3,4)));
+        A.add(new ArrayList<>(Arrays.asList(5,6,7,8)));
+        A.add(new ArrayList<>(Arrays.asList(9,10,11,12)));
+
+
+//
+//        ArrayList<ArrayList<Integer>> B = ss.performOps(A);
+//        for(int i = 0; i < B.size(); i++) {
+//            for (int j = 0; j < B.get(i).size(); j++) {
+//                System.out.print(B.get(i).get(j) + " ");
+//            }
+//        }
+
+        ArrayList<Integer> C = new ArrayList<>(Arrays.asList(5,10,2,1));
+
+        ArrayList<Integer> B = ss.performOps2(C);
+
+        LargeFactorial lf = new LargeFactorial();
+        ArrayList<Integer> bigFact = lf.solve(100);
+        for (int i = bigFact.size()-1; i >=0; i--) {
+            System.out.print(bigFact.get(i) + "");
         }
     }
 }
