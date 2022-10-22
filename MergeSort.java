@@ -11,7 +11,7 @@ public class MergeSort {
     private void mergeSort( int arr[], int l, int r){
         if(l < r){
             int mid = l+(r-l)/2;
-            mergeSort(arr, 0, mid);
+            mergeSort(arr, l, mid);
             mergeSort(arr,mid+1,r);
             merge(arr,l,mid,r);
         }

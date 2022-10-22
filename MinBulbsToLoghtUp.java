@@ -27,3 +27,82 @@ public class MinBulbsToLoghtUp {
         return count;
     }
 }
+/*
+
+public class Solution {
+
+    public int solve(ArrayList<Integer> A, int B) {
+
+        //Condition where size of array is less than the power range of the bulb
+
+        //We have to check whether there is a single bulb working or not
+
+        // if working simply by greedy method we return 1
+
+        if(A.size()<B){
+
+            for(int i=0; i<A.size(); i++){
+
+                if(A.get(i)==1)
+
+                    return 1;
+
+            }
+
+            return -1;
+
+        }
+
+        // Now we start checking for the scenario where size of array is greater than the power range of the bulb
+
+        int count = B-1; //Checking from the left if bulbs are present to light leftmost part
+
+        int revCount = B-1; //Checking from the right if bulbs are present to light rightmost part
+
+        for(int i=0; i<A.size(); i++){
+
+            if(A.get(i)==0){
+
+                count++;
+
+            }
+
+            if(A.get(i)==1){
+
+                count = 0;
+
+            }
+
+            if(A.get(A.size()-i-1)==0){
+
+                revCount++;
+
+            }
+
+            if(A.get(A.size()-i-1)==1){
+
+                revCount = 0;
+
+            }
+
+            // If bulb is not working to light the leftmost or rightmost part of the corridor
+
+            if(count>(2*(B-1)) || revCount>(2*(B-1))){
+
+                return -1;
+
+            }
+
+        }
+
+        // Simple mathematical forula for calculating the no of buls required to light the whole corridor
+
+        return (A.size()/((2*B)-1))+1;
+
+    }
+
+}
+
+
+
+ */
