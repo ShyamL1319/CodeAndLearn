@@ -26,4 +26,14 @@ public class Solution {
         if(inArr[0] % 2 == 0 && inArr[len-1] % 2 == 0) return "YES";
         return "NO";
     }
+    public static void main(String args[]){
+        System.out.println(bulbSwitch(5));
+    }
+    public static int bulbSwitch(int n) {
+        int count = 1;
+        while( (count * count) < n){
+            count += 1;
+        }
+        return count-1;
+    }
 }
