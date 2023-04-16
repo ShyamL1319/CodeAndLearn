@@ -72,15 +72,21 @@ public class Main {
 //            }
 //        }
 
-        ArrayList<Integer> C = new ArrayList<>(Arrays.asList(5,10,2,1));
+//        ArrayList<Integer> C = new ArrayList<>(Arrays.asList(5,10,2,1));
+//
+//        ArrayList<Integer> B = ss.performOps2(C);
+//
+//        LargeFactorial lf = new LargeFactorial();
+//        ArrayList<Integer> bigFact = lf.solve(100);
+//        for (int i = bigFact.size()-1; i >=0; i--) {
+//            System.out.print(bigFact.get(i) + "");
+//        }
 
-        ArrayList<Integer> B = ss.performOps2(C);
+        Solution sol = new Solution();
+        long result = sol.power(2,3);
 
-        LargeFactorial lf = new LargeFactorial();
-        ArrayList<Integer> bigFact = lf.solve(100);
-        for (int i = bigFact.size()-1; i >=0; i--) {
-            System.out.print(bigFact.get(i) + "");
-        }
+
+        System.out.println(result);
     }
 }
 
