@@ -1,4 +1,3 @@
-import java.awt.geom.Area;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -54,14 +53,14 @@ public class Main {
 //        for( int i =0; i< arr.length; i++){
 //            System.out.print(arr[i] + " ");
 //        }
-        int arr1[] = {1,2,3,4};
-        int arr2[] = {5,6,7,8};
-        int arr3[] = {9,10,11,12};
+        int[] arr1 = {1, 2, 3, 4};
+        int[] arr2 = {5, 6, 7, 8};
+        int[] arr3 = {9, 10, 11, 12};
 
         ArrayList<ArrayList<Integer>> A = new ArrayList<ArrayList<Integer>>();
-        A.add(new ArrayList<>(Arrays.asList(1,2,3,4)));
-        A.add(new ArrayList<>(Arrays.asList(5,6,7,8)));
-        A.add(new ArrayList<>(Arrays.asList(9,10,11,12)));
+        A.add(new ArrayList<>(Arrays.asList(1, 2, 3, 4)));
+        A.add(new ArrayList<>(Arrays.asList(5, 6, 7, 8)));
+        A.add(new ArrayList<>(Arrays.asList(9, 10, 11, 12)));
 
 
 //
@@ -82,11 +81,6 @@ public class Main {
 //            System.out.print(bigFact.get(i) + "");
 //        }
 
-        Solution sol = new Solution();
-        long result = sol.power(2,3);
-
-
-        System.out.println(result);
     }
 }
 
