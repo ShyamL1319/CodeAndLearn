@@ -1,7 +1,7 @@
 public class MaximamPositivity {
     public static void main(String[] args) {
         Solution<Integer> sol = new Solution<>();
-        int[] A = {};
+        int[] A = {1};
         Integer[] res = maxPsotivity(A);
         sol.printOneDArray(res);
     }
