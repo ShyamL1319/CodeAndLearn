@@ -68,7 +68,6 @@ public class ChrismasTree {
     public static int chrismasTree(int[] A, int[] B) {
         final int inf = (int) (1e9 + 10);
         int minCost = inf;
-        int tempMinCost = inf;
         for (int i = 0; i < A.length; i++) {
             int leftMin = inf;
             int rightMin = inf;
@@ -84,11 +83,7 @@ public class ChrismasTree {
                     rightMin = Math.min(B[k], rightMin);
                 }
             }
-
-
-            tempMinCost = leftMin + rightMin + B[i];
-
-            minCost = Math.min(minCost, tempMinCost);
+            minCost = Math.min(minCost, leftMin + rightMin + B[i]);
 
         }
 
