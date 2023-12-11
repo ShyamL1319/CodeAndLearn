@@ -47,6 +47,7 @@ public class ExponentMod {
         System.out.println(exponentMod(136, 173, 93360));
     }
 
+
     public static int exponentMod(int A, int B, int C) {
         // Base cases
         if (A == 0)
