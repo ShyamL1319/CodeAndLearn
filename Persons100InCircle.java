@@ -12,7 +12,7 @@
 
 public class Persons100InCircle {
     public static void main(String[] args) {
-        System.out.println(findLastManAlive(100));
+        System.out.println(findLastManAlive(8));
     }
 
     public static int findLastManAlive(int N) {
@@ -20,9 +20,9 @@ public class Persons100InCircle {
         int n = (int) Math.sqrt(N);
         FastPower fp = new FastPower();
         int start = 1;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i < N; i++) {
             int num = fp.fastPower(2, i, 100000007);
-            if (num < N) {
+            if (num <= N) {
                 start = num;
             } else {
                 break;
