@@ -94,5 +94,6 @@ public class ColofulNumber {
             }
         }
         return 1;
+
     }
 }
