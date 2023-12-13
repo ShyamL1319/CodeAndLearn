@@ -70,18 +70,22 @@ import java.util.HashSet;
  */
 public class ColofulNumber {
     public static void main(String[] args) {
-        System.out.println(colorful(2564));
+        System.out.println(colorful(25644));
     }
 
     public static int colorful(int A) {
         ArrayList<Integer> arr = new ArrayList<>();
-
-        while (A > 0) {
-            arr.add(A % 10);
-            A /= 10;
-        }
         final int n = arr.size();
         HashSet<Integer> hs = new HashSet<>();
+        while (A > 0) {
+            arr.add(A % 10);
+            if (hs.contains(A % 10)) {
+                return 0;
+            }
+            hs.add(A % 10);
+            A /= 10;
+        }
+
         for (int i = 0; i < n; i++) {
             int prod = 1;
             for (int j = i; j < n; j++) {
