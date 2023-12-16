@@ -6,7 +6,7 @@ import java.util.HashMap;
  */
 public class CountPairDiff {
     public static void main(String[] args) {
-        int A = 1;
+        int A = 0;
         int[] B = {1, 2, 1, 2};// {3, 5, 1, 2};
         System.out.println(pairDiffCount(B, A));
     }
