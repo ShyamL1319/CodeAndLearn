@@ -86,10 +86,7 @@ public class SumLeftLeaves {
         } else {
             solve(A.left);
         }
-
         solve(A.right);
-
         return sum;
-
     }
 }
