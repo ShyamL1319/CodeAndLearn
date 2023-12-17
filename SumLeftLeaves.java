@@ -75,6 +75,7 @@ public class SumLeftLeaves {
         t.right.left = new TreeNode(15);
         t.right.right = new TreeNode(9);
         System.out.println(solve(t));
+        System.out.println(5 >> 1);
     }
 
     public static int solve(TreeNode A) {
