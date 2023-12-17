@@ -90,5 +90,6 @@ public class SumLeftLeaves {
         solve(A.right);
 
         return sum;
+
     }
 }
