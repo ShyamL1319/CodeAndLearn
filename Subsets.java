@@ -109,7 +109,6 @@ public class Subsets {
             for (int j = 0; j < A.size(); j++) {
                 if (((1 << j) & i) != 0) {
                     insideArr.add(A.get(j));
-
                 }
             }
             arr.add(insideArr);
