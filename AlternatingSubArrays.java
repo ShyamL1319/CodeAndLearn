@@ -87,6 +87,7 @@ public class AlternatingSubArrays {
             int end = i + K;
             boolean ulternating = true;
 
+
             for (int k = start + 1; k < end; k++) {
                 if (A[k - 1] == A[k]) {
                     ulternating = false;
@@ -95,6 +96,7 @@ public class AlternatingSubArrays {
             }
             if (ulternating) res.add(start + B);
         }
+
         return res.stream().mapToInt(i -> i).toArray();
     }
 }
