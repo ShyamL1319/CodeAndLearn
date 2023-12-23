@@ -63,6 +63,8 @@ public class AllSubArrays {
                     result[cnt] = resArr;
                     cnt += 1;
                 }
+
+                
             }
         }
         return result;
