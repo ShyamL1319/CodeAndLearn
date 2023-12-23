@@ -99,7 +99,9 @@ public class AthMagicalNumber {
             x = temp;
         }
         int gcd = x;
+
         int lcm = (a * b) / gcd;
+        
         return lcm;
     }
 }
