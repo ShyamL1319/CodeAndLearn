@@ -32,6 +32,8 @@ public class AddOneToNumber {
             if(ele == 0 && res.size() == 0){
                 continue;
             }
+
+            
             res.add(ele);
         }
 
