@@ -3,6 +3,9 @@ public class MaximamPositivity {
         Solution<Integer> sol = new Solution<>();
         int[] A = {1};
         Integer[] res = maxPsotivity(A);
+
+
+        
         sol.printOneDArray(res);
     }
 
