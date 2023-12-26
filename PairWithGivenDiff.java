@@ -74,6 +74,7 @@ public class PairWithGivenDiff {
         int[] A = {1, 5, 3, 4, 2};
         int B = 3;
         System.out.println(solve(A, B));
+
     }
 
     public static int solve(int[] A, int B) {
