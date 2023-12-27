@@ -64,19 +64,19 @@ public class LongestSubstringWithoutRepeat {
     public static int lengthOfLongestSubstring(String A) {
         int N = A.length();
         int ans = 0;
-        int c = 0;
+        //int c = 0;
         HashMap<Character, Integer> hm = new HashMap<>();
         for (int i = 0; i < N; i++) {
             char ch = A.charAt(i);
             if (hm.containsKey(ch)) {
                 i = hm.get(ch);
-                c = 0;
+                //c = 0;
                 hm.clear();
             } else {
                 hm.put(ch, i);
-                c++;
+                //c++;
             }
-            ans = Math.max(ans, c);
+            ans = Math.max(ans, hm.size());
         }
         return ans;
     }
