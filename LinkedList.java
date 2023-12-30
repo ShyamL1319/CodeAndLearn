@@ -72,15 +72,30 @@ public class LinkedList {
     public static Node removeLastNode(Node linkedList){
         Node temp = linkedList;
 
-        if(temp == null) return null;
+        if (temp == null) return null;
 
-        if(temp.link ==  null) return null;
-        while (temp.link.link != null ){
+        if (temp.link == null) return null;
+        while (temp.link.link != null) {
             temp = temp.link;
         }
         temp.link = null;
         return linkedList;
     }
 
+    public static int checkSortedLinkedList(Node A) {
+        Node temp = A;
+        //edga case
+        if (temp.link == null) {
+            return 1;
+        }
+
+        while (temp.link != null) {
+            if (temp.data > temp.link.data) {
+                return 0;
+            }
+            temp = temp.link;
+        }
+        return 1;
+    }
 
 }
