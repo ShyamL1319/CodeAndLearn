@@ -61,10 +61,24 @@
  */
 public class AddTwoNoAsLL {
     public static void main(String[] args) {
+        ListNode ln = new ListNode(1);
+        ln.next = new ListNode(2);
+        ln.next.next = new ListNode(3);
+        ln.next.next.next = new ListNode(4);
+        ln.next.next.next.next = new ListNode(5);
+        ln.next.next.next.next.next = new ListNode(6);
 
+        ListNode ln2 = new ListNode(7);
+        ln2.next = new ListNode(8);
+//        ln2.next.next = ln.next.next.next;
+        ListNode resNode = addTwoNumbers(ln, ln2);
+        while (resNode != null) {
+            System.out.print(resNode.val + "->");
+            resNode = resNode.next;
+        }
     }
 
-    public ListNode addTwoNumbers(ListNode A, ListNode B) {
+    public static ListNode addTwoNumbers(ListNode A, ListNode B) {
         ListNode head = new ListNode(0);
         ListNode temp = head;
         int carry = 0;
