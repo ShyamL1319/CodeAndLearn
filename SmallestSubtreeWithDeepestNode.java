@@ -59,7 +59,10 @@
  */
 public class SmallestSubtreeWithDeepestNode {
     public static void main(String[] args) {
-
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(12);
+        root.right = new TreeNode(13);
+        System.out.println(solve(root).val);
     }
 
     public static TreeNode solve(TreeNode A) {
