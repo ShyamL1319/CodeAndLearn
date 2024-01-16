@@ -80,7 +80,13 @@ import java.util.Queue;
  */
 public class DistanceOfNearestCell {
     public static void main(String[] args) {
-
+        int[][] A = {
+                {0, 1, 1},
+                {1, 1, 0},
+                {0, 1, 1}
+        };
+        NoOfIlansII noi = new NoOfIlansII();
+        System.out.println(noi.solve(A));
     }
 
     public int[][] solve(int[][] A) {

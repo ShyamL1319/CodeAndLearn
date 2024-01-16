@@ -70,7 +70,7 @@ public class NoOfIlansII {
                 {1, 1, 0},
                 {0, 1, 1}
         };
-        NoOfIlansII noi = new NoOfIlansII();
+        DistanceOfNearestCell noi = new DistanceOfNearestCell();
         System.out.println(noi.solve(A));
     }
 
