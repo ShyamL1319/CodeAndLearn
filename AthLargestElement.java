@@ -70,7 +70,7 @@ import java.util.PriorityQueue;
 public class AthLargestElement {
     public static void main(String[] args) {
         int[] A = {1, 2, 3, 4, 5};
-        int B = 4;
+        int B = 2;
         int[] res = solve(B, A);
         for (int ele : res) {
             System.out.print(ele + ", ");
