@@ -541,4 +541,132 @@ public class LongestSubstringWithoutRepeat {
         return mx;
     }
 
+    public int longestConsecutiveOnes2(int[] arr, int k) {
+        int l = 0;
+        int r = 0;
+        int maxlen = 0;
+        int zeros = 0;
+        int n = arr.length - 1;
+        while (r <= n) {
+            if (arr[r] == 0) {
+                zeros += 1;
+            }
+            if (zeros > k) {
+                if (arr[l] == 0)
+                    zeros -= 1;
+                l += 1;
+            }
+
+            if (zeros <= k) {
+                maxlen = Math.max(maxlen, r - l + 1);
+            }
+
+            r++;
+        }
+        return maxlen;
+    }
+    public int longestConsecutiveOnes(int[] arr, int k) {
+        int l = 0;
+        int r = 0;
+        int maxlen = 0;
+        int zeros = 0;
+        int n = arr.length-1;
+        while (r <= n) {
+            if (arr[r] == 0) {
+                zeros += 1;
+            }
+            while (zeros > k) {
+                if(arr[l] == 0) zeros -= 1;
+                l += 1;
+            }
+            if (zeros <= k) {
+                maxlen = Math.max(maxlen, r - l + 1);
+            }
+            r++;
+        }
+        return maxlen;
+    }
+    public int searchInsert(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1;
+        int pos = nums.length;
+        while (low < high) {
+            int mid = (low + high) / 2;
+            if (nums[mid] >= target) {
+                pos = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return pos;
+    }
+    public int findUpperOccurence(int[] nums, int x) {
+        int low = 0;
+        int high = nums.length-1;
+        int last = -1;
+
+        while (low < high) {
+            int mid = (low + high) / 2;
+
+            if (nums[mid] == x) {
+                last = mid;
+                low = mid + 1;
+            } else if (nums[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return last;
+    }
+    public int findLowerOccurence(int[] nums, int x) {
+        int low = 0;
+        int high = nums.length-1;
+        int first = -1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (nums[mid] == x) {
+                first = mid;
+                high = mid - 1;
+            } else if (nums[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return first;
+    }
+    public int[] searchRange(int nums[], int target) {
+        int first = findLowerOccurence(nums, target);
+        if(first == -1)
+            return new int[] { -1, -1 };
+        return new int[] {first, findUpperOccurence(nums, target)};
+    }
+    public int searchInRotatedSortedArray(int arr[], int target) {
+        int low = 0;
+        int high = arr.length - 1;
+
+        while (low < high) {
+            int mid = (low + (high - low)) / 2;
+
+            if (arr[mid] == target)
+                return mid;
+
+            if (arr[low] <= arr[mid]) {
+                if (target <= arr[mid] && arr[low] <= target) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
+            } else {
+                if (arr[mid] <= target && target <= arr[high]) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
+            }
+        }
+        return -1;
+    }
 }
