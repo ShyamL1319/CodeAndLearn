@@ -669,4 +669,176 @@ public class LongestSubstringWithoutRepeat {
         }
         return -1;
     }
+    public double power(double x, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        // Special handling for the most negative number to avoid overflow when doing -n
+        if (n == Integer.MIN_VALUE) {
+            x = x * x;
+            n = n / 2; // n is now -1073741824, which is safe to negate
+        }
+        if (n < 0) {
+            x = 1.0 / x;
+            n = -n;
+        }
+
+        double half = power(x, n / 2);
+        if (n % 2 == 0) {
+            return half * half;
+        } else {
+            return x * half * half;
+        }
+
+    }
+    public int binarySearchInMatrix(int matrix[][], int target) {
+        int low = 0;
+        int n = matrix.length;
+        int m = matrix[0].length;
+        int high = n * m - 1;
+        while (low<=high) {
+            int mid = low + (high - low) / 2;
+            if (matrix[mid / m][mid % m] == target) {
+                return matrix[mid / m][mid % m];
+            } else if(target < matrix[mid / m][mid % m]){
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    public int inversionOfArray(int []arr) {
+        int cnt = mergeSort(arr, 0, arr.length - 1);
+        // for (int i : arr) {
+        //     System.out.print(i + ", ");
+        // }
+        return cnt;
+    }
+
+    public int merge(int []arr, int low, int mid, int high) {
+        int size = high - low + 1;
+        int temp[] = new int[size];
+        int left = low;
+        int right = mid+1;
+        int idx = 0;
+        int cnt = 0;
+        while (left <= mid && right <= high) {
+            if (arr[left] <= arr[right]) {
+                temp[idx++] = arr[left++];
+            } else {
+                cnt += mid - left +1;
+                temp[idx++] = arr[right++];
+            }
+        }
+        while (left <= mid) {
+            temp[idx++] = arr[left++];
+        }
+        while (right <= high) {
+            temp[idx++] = arr[right++];
+        }
+        idx = 0;
+        while (idx < size) {
+            arr[low + idx] = temp[idx];
+            idx++;
+        }
+        return cnt;
+    }
+
+    public int mergeSort(int arr[], int low, int high) {
+        int cnt = 0;
+        if (low < high) {
+            int mid = (low + (high - low) / 2);
+            cnt += mergeSort(arr, low, mid);
+            cnt += mergeSort(arr, mid + 1, high);
+            cnt += merge(arr, low, mid, high);
+            return cnt;
+        }
+        return cnt;
+    }
+
+    public int[] findMissingAndRepeatedValues(int[][] grid) {
+        long n = grid.length * grid.length;
+        long expectedSum = n * (n + 1) / 2;
+        long expectedSqSum = n * (n + 1) * (2 * n + 1) / 6;
+        long actualSum = 0;
+        long actualSqSum = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid.length; j++) {
+                actualSum += grid[i][j];
+                actualSqSum += (long)(grid[i][j] * grid[i][j]);
+            }
+        }
+
+        long sumDiff = actualSum - expectedSum;
+        long sqSumDiff = actualSqSum - expectedSqSum;
+
+        long sumPlus = sqSumDiff / sumDiff; // R + M
+
+        // Solve for R and M
+        long repeatNumber = (sumPlus + sumDiff) / 2;
+        long missingSumber = sumPlus - repeatNumber;
+
+        return new int[] { (int)repeatNumber, (int)missingSumber };
+
+    }
+
+    public int findDuplicate(int nums[]) {
+        int s = 0;
+        int f = 0;
+        while (true) {
+            s = nums[s];
+            f = nums[nums[f]];
+            if (f == s) {
+                break;
+            }
+        }
+        s = 0;
+        while (s != f) {
+            s = nums[s];
+            f = nums[f];
+        }
+        return s;
+    }
+    public int[][] mergeInterval(int[][] intervals) {
+        int n = intervals.length;
+        Arrays.sort(intervals, (a, b) -> {
+            if (a[0] < b[0]) {
+                return -1;
+            } else if (a[0] == b[0] && a[1] < b[1]) {
+                return -1;
+            } else if(a[0] == b[0] && a[1] == b[1]){
+                return 0;
+            }
+            return 1;
+        });
+        int cnt = 0;
+        for (int i = 1; i < n; i++) {
+            int start_i = intervals[i][0];
+            int end_i = intervals[i][1];
+            if (intervals[cnt][1] >= start_i) {
+                intervals[cnt][1] = Math.max(end_i, intervals[cnt][1]);
+            } else {
+                cnt++;
+                intervals[cnt][0] = intervals[i][0];
+                intervals[cnt][1] = intervals[i][1];
+            }
+        }
+        return Arrays.copyOfRange(intervals, 0, cnt + 1);
+    }
+    public int nBy2MajorityEle(int[] arr) {
+        int cnt = 0;
+        int ans = 0;
+        for (int el : arr) {
+            if (cnt == 0)
+                ans = el;
+            if (el == ans)
+                cnt++;
+            else
+                cnt--;
+        }
+        return ans;
+    }
+
 }
