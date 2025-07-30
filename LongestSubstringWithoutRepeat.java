@@ -841,4 +841,35 @@ public class LongestSubstringWithoutRepeat {
         return ans;
     }
 
+    public int countUniquePath(int[][] grid) {
+        int dp[][] = new int[grid.length][grid[0].length];
+        return uniquePathHelper(grid, 0,0,grid.length-1,grid[0].length-1,dp);
+    }
+
+    public int uniquePathHelper(int grid[][], int i, int j, int n, int m, int dp [][]) {
+        if (i == n && j == m && grid[i][j] == 0) {
+            return 1;
+        }
+        if (i == n && j == m && grid[i][j] == 1)
+            return -1;
+
+        if (i > n || j > m) {
+            return 0;
+        } else {
+            if (grid[i][j] == 1) {
+                return 0;
+            } else {
+
+                if (dp[i][j] != 0) {
+                    return dp[i][j];
+                } else {
+                    int paths = uniquePathHelper(grid, i, j + 1, n, m, dp) + uniquePathHelper(grid, i + 1, j, n, m, dp);
+                    dp[i][j] = paths;
+                    return paths;
+                }
+            }
+        }
+    }
+
+
 }
