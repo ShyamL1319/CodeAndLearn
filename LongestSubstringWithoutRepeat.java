@@ -926,5 +926,34 @@ public class LongestSubstringWithoutRepeat {
         }
         return cnt;
     }
-
+    public int countSubArraysXORK2(int nums[], int k) {
+        int count = 0;
+        HashMap<Integer, Integer> hmap = new HashMap<>();
+        int xor = 0;
+        for (int num : nums) {
+            xor ^= num;
+            if (xor == k) {
+                count += 1;
+            }
+            if (hmap.getOrDefault(xor ^ k, 0) != 0) {
+                count += hmap.get(xor ^ k);
+            }
+            hmap.put(xor, hmap.getOrDefault(xor, 0) + 1);
+        }
+        return count;
+    }
+    public int countSubArraysXORK(int nums[], int k) {
+        int count = 0;
+        int n = nums.length;
+        for (int i = 0; i < n; i++) {
+            int curr_xor = 0;
+            for (int j = i; j < n; j++) {
+                curr_xor = curr_xor ^ nums[j];
+                if (curr_xor == k) {
+                    count += 1;
+                }
+            }
+        }
+        return count;
+    }
 }
